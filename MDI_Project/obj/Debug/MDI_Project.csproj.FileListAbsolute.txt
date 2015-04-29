@@ -12,3 +12,17 @@ E:\Универ\ООП\Курсач\MDI_Project\MDI_Project\obj\Debug\MDI_Projec
 E:\Универ\ООП\Курсач\MDI_Project\MDI_Project\obj\Debug\MDI_Project.ProviderEditForm.resources
 E:\Универ\ООП\Курсач\MDI_Project\MDI_Project\obj\Debug\MDI_Project.Purchase_SaleForm.resources
 E:\Универ\ООП\Курсач\MDI_Project\MDI_Project\obj\Debug\MDI_Project.ReportForm.resources
+C:\Users\user\Desktop\Kursach\MDI_Project\bin\Debug\MDI_Project.exe.config
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.exe
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.pdb
+C:\Users\user\Desktop\Kursach\MDI_Project\bin\Debug\MDI_Project.exe
+C:\Users\user\Desktop\Kursach\MDI_Project\bin\Debug\MDI_Project.pdb
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.Form1.resources
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.GoodsEditForm.resources
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.MainForm.resources
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.Properties.Resources.resources
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.ProviderEditForm.resources
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.Purchase_SaleForm.resources
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.ReportForm.resources
+C:\Users\user\Desktop\Kursach\MDI_Project\obj\Debug\MDI_Project.csproj.GenerateResource.Cache
