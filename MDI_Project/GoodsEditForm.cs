@@ -35,20 +35,20 @@ namespace MDI_Project
                 {
                     if ((myStream = openFileDialog.OpenFile()) != null)
                     {
-                        
+
                         using (myStream)
                         {
                             string s;
                             name_file = openFileDialog.FileName;
                             StreamReader streamreader = File.OpenText(name_file);
                             while ((s = streamreader.ReadLine()) != null)
-                            {                               
+                            {
                                 file_text += s + "\r\n";
                             }
                             //textBox1.Text = file_text;
-                            textBox1.Text = File.ReadAllText(name_file , Encoding.Default);
+                            textBox1.Text = File.ReadAllText(name_file, Encoding.Default);
                             streamreader.Close();
-                                // Insert code to read the stream here.
+                            // Insert code to read the stream here.
                         }
                     }
                 }
