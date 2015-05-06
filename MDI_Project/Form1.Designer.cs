@@ -36,7 +36,9 @@
             this.GoodsEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProviderEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mdiDataSet1 = new MDI_Project.MDIDataSet();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mdiDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -105,6 +107,11 @@
             this.ReportToolStripMenuItem.Text = "Отчёт о популярности";
             this.ReportToolStripMenuItem.Click += new System.EventHandler(this.ReportToolStripMenuItem_Click_1);
             // 
+            // mdiDataSet1
+            // 
+            this.mdiDataSet1.DataSetName = "MDIDataSet";
+            this.mdiDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +127,7 @@
             this.Text = "Прграмма учёта купли-продажи";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mdiDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +142,7 @@
         private System.Windows.Forms.ToolStripMenuItem MainToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Purchase_SaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReportToolStripMenuItem;
+        private MDIDataSet mdiDataSet1;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SQLite;
 
 namespace MDI_Project
 {
@@ -17,10 +18,22 @@ namespace MDI_Project
         {
             InitializeComponent();
         }
+
+        public void Connect_Use()
+        {
+
+            SQLiteConnection sql = new SQLiteConnection();
+            sql.Open();
+            textBox1.Text = sql.Database.ToString();
+            sql.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
             OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            Connect_Use();
 
             openFileDialog.InitialDirectory = "C:\\";
             openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -62,6 +75,13 @@ namespace MDI_Project
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             textBox1.ReadOnly = true;
+        }
+
+        private void GoodsEditForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'mDIDataSet.Goods' table. You can move, or remove it, as needed.
+            this.goodsTableAdapter.Fill(this.mDIDataSet.Goods);
+
         }
     }
 
