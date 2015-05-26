@@ -14,54 +14,101 @@ namespace MDI_Project
 {
     public partial class GoodsEditForm : Form
     {
+        SQLiteConnection sql = new SQLiteConnection(@"Data Source=base.sqlite;Version=3");
+
         public GoodsEditForm()
         {
             InitializeComponent();
         }
-
-        public void Connect_Use()
-        {
-
-            SQLiteConnection sql = new SQLiteConnection();
-            sql.Open();
-            textBox1.Text = sql.Database.ToString();
-            sql.Close();
-        }
+        DataBase db = new DataBase();
 
         private void button1_Click(object sender, EventArgs e)
         {
+            db.AddDataBase();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //sql.Open();
+            ////try
+            ////{
+            //    string insert = "insert into contractor (ContractorID, ContractorName, Email) values (0, 'Avtoraai Kia', 'hedgehoggy@mail.ru')";
+            //    SQLiteCommand command_insert = new SQLiteCommand(insert, sql);
+            //    command_insert.ExecuteNonQuery();
+            //    insert = "insert into contractor (ContractorID, ContractorName, Email) values (1, 'Motom', 'pesci.nt@gmail.com')";
+            //    command_insert = new SQLiteCommand(insert, sql);
+            //    command_insert.ExecuteNonQuery();
+            //    insert = "insert into contractor (ContractorID, ContractorName, Email) values (2, 'Simbirsk Lada', 'simbirsk@mail.ru')";
+            //    command_insert = new SQLiteCommand(insert,sql);
+            //    command_insert.ExecuteNonQuery();
+            ////}
+            ////catch
+            ////{
+            ////    MessageBox.Show("Not today, buddy");
+            ////}
+
+
+
+            //string result = " ";
+            //string select = "select * from Contractor order by ContractorID desc";
+            //SQLiteCommand command_select = new SQLiteCommand(select,sql);
+            //SQLiteDataReader reader = command_select.ExecuteReader();
+            //while (reader.Read()) 
+            //{
+            //    result = result + reader["ContractorID"] + reader["ContractorName"] + reader["Email"] + "\r\n"; 
+            //}
+            //textBox1.Text = result;
+            //sql.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            sql.Open();
+            try 
+            { 
+                SQLiteCommand sqlcon = new SQLiteCommand(sql);
+                sqlcon.CommandText = @"SELECT * FROM Contractor;";
+                SQLiteDataReader srd = sqlcon.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(srd);
+                dataGridView1.DataSource = dt;
+                srd.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Вывод базы данных невозможен");
+            }
+
+            sql.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
             Stream myStream = null;
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            string line;
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
 
-            Connect_Use();
-
-            openFileDialog.InitialDirectory = "C:\\";
-            openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog.FilterIndex = 2;
-            openFileDialog.RestoreDirectory = true;
-            string name_file = " ";
-            string file_text = " ";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    if ((myStream = openFileDialog.OpenFile()) != null)
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
                     {
-
                         using (myStream)
                         {
-                            string s;
-                            name_file = openFileDialog.FileName;
-                            StreamReader streamreader = File.OpenText(name_file);
-                            while ((s = streamreader.ReadLine()) != null)
+                            StreamReader file = new StreamReader(openFileDialog1.FileName);
+                            while ((line = file.ReadLine()) != null)
                             {
-                                file_text += s + "\r\n";
+                                sql.Open();
+                                //string insert = "insert into contractor (ContractorID, ContractorName, Email) values (0, 'Avtoraai Kia', 'hedgehoggy@mail.ru')";
+                                SQLiteCommand command_insert = new SQLiteCommand(line, sql);
+                                command_insert.ExecuteNonQuery();
+                                sql.Close();
                             }
-                            //textBox1.Text = file_text;
-                            textBox1.Text = File.ReadAllText(name_file, Encoding.Default);
-                            streamreader.Close();
-                            // Insert code to read the stream here.
                         }
                     }
                 }
@@ -70,18 +117,6 @@ namespace MDI_Project
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            textBox1.ReadOnly = true;
-        }
-
-        private void GoodsEditForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'mDIDataSet.Goods' table. You can move, or remove it, as needed.
-            this.goodsTableAdapter.Fill(this.mDIDataSet.Goods);
-
         }
     }
 
