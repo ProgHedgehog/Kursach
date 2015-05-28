@@ -27,47 +27,13 @@ namespace MDI_Project
             db.AddDataBase();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //sql.Open();
-            ////try
-            ////{
-            //    string insert = "insert into contractor (ContractorID, ContractorName, Email) values (0, 'Avtoraai Kia', 'hedgehoggy@mail.ru')";
-            //    SQLiteCommand command_insert = new SQLiteCommand(insert, sql);
-            //    command_insert.ExecuteNonQuery();
-            //    insert = "insert into contractor (ContractorID, ContractorName, Email) values (1, 'Motom', 'pesci.nt@gmail.com')";
-            //    command_insert = new SQLiteCommand(insert, sql);
-            //    command_insert.ExecuteNonQuery();
-            //    insert = "insert into contractor (ContractorID, ContractorName, Email) values (2, 'Simbirsk Lada', 'simbirsk@mail.ru')";
-            //    command_insert = new SQLiteCommand(insert,sql);
-            //    command_insert.ExecuteNonQuery();
-            ////}
-            ////catch
-            ////{
-            ////    MessageBox.Show("Not today, buddy");
-            ////}
-
-
-
-            //string result = " ";
-            //string select = "select * from Contractor order by ContractorID desc";
-            //SQLiteCommand command_select = new SQLiteCommand(select,sql);
-            //SQLiteDataReader reader = command_select.ExecuteReader();
-            //while (reader.Read()) 
-            //{
-            //    result = result + reader["ContractorID"] + reader["ContractorName"] + reader["Email"] + "\r\n"; 
-            //}
-            //textBox1.Text = result;
-            //sql.Close();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             sql.Open();
-            try 
+            try
             { 
                 SQLiteCommand sqlcon = new SQLiteCommand(sql);
-                sqlcon.CommandText = @"SELECT * FROM Contractor;";
+                sqlcon.CommandText = @"SELECT * FROM Goods;";
                 SQLiteDataReader srd = sqlcon.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(srd);
@@ -117,6 +83,11 @@ namespace MDI_Project
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AMTgoods.GenerateFile();
         }
     }
 

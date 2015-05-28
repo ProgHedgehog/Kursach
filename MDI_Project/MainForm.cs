@@ -16,11 +16,29 @@ namespace MDI_Project
         public MainForm()
         {
             InitializeComponent();
+            CheckGoods();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void CheckGoods()
         {
+            var c = " ";
+            SQLiteConnection sql = new SQLiteConnection(@"Data Source=base.sqlite;Version=3");
+            sql.Open();
+            string check_amount = "SELECT Amount FROM Goods";
+            SQLiteCommand check = new SQLiteCommand(check_amount, sql);
+            check.ExecuteNonQuery();
+            SQLiteDataReader reader = check.ExecuteReader();
+            while (reader.Read())
+            {
+                //if (reader[0] > (reader[0] - 10))
+               // c =c + String.Format("{0}", reader[0]) + " \n";
+                c = reader[0] + "";
+            }
+            textBox1.Text = c;
+
             
+
+            sql.Close();
         }
     }
 }
