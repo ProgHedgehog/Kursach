@@ -36,6 +36,7 @@
             this.GoodsEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProviderEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoodsCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mdiDataSet1 = new MDI_Project.MDIDataSet();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mdiDataSet1)).BeginInit();
@@ -48,7 +49,8 @@
             this.MainToolStripMenuItem,
             this.Purchase_SaleToolStripMenuItem,
             this.EditToolStripMenuItem,
-            this.ReportToolStripMenuItem});
+            this.ReportToolStripMenuItem,
+            this.GoodsCountToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1059, 29);
@@ -103,9 +105,18 @@
             this.ReportToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ReportToolStripMenuItem.ForeColor = System.Drawing.Color.BurlyWood;
             this.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem";
-            this.ReportToolStripMenuItem.Size = new System.Drawing.Size(198, 25);
+            this.ReportToolStripMenuItem.Size = new System.Drawing.Size(197, 25);
             this.ReportToolStripMenuItem.Text = "Отчёт о популярности";
             this.ReportToolStripMenuItem.Click += new System.EventHandler(this.ReportToolStripMenuItem_Click_1);
+            // 
+            // GoodsCountToolStripMenuItem
+            // 
+            this.GoodsCountToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.GoodsCountToolStripMenuItem.ForeColor = System.Drawing.Color.BurlyWood;
+            this.GoodsCountToolStripMenuItem.Name = "GoodsCountToolStripMenuItem";
+            this.GoodsCountToolStripMenuItem.Size = new System.Drawing.Size(237, 25);
+            this.GoodsCountToolStripMenuItem.Text = "Количество номенклатуры";
+            this.GoodsCountToolStripMenuItem.Click += new System.EventHandler(this.GoodsCountToolStripMenuItem_Click);
             // 
             // mdiDataSet1
             // 
@@ -143,6 +154,7 @@
         private System.Windows.Forms.ToolStripMenuItem Purchase_SaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReportToolStripMenuItem;
         private MDIDataSet mdiDataSet1;
+        private System.Windows.Forms.ToolStripMenuItem GoodsCountToolStripMenuItem;
     }
 }
 

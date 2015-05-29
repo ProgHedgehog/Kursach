@@ -30,14 +30,11 @@ namespace MDI_Project
             SQLiteDataReader reader = check.ExecuteReader();
             while (reader.Read())
             {
-                //if (reader[0] > (reader[0] - 10))
-               // c =c + String.Format("{0}", reader[0]) + " \n";
                 c = reader[0] + "";
+                int x = int.Parse(c);
+                //if (x < )
             }
             textBox1.Text = c;
-
-            
-
             sql.Close();
         }
     }

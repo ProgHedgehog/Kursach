@@ -96,3 +96,4 @@ C:\Users\user\Desktop\exchangerate!!!\Kursach\MDI_Project\obj\Debug\MDI_Project.
 C:\Users\user\Desktop\exchangerate!!!\Kursach\MDI_Project\obj\Debug\MDI_Project.Purchase_SaleForm.resources
 C:\Users\user\Desktop\exchangerate!!!\Kursach\MDI_Project\obj\Debug\MDI_Project.ReportForm.resources
 C:\Users\user\Desktop\exchangerate!!!\Kursach\MDI_Project\obj\Debug\MDI_Project.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\КУРСОВАЯ!!!\Kursach\MDI_Project\obj\Debug\MDI_Project.GoodsCount.resources

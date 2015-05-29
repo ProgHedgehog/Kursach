@@ -100,5 +100,20 @@ namespace MDI_Project
                 pe.Activate();
             }
         }
+
+        GoodsCount gc; 
+        private void GoodsCountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (gc == null)
+            {
+                gc = new GoodsCount();
+                gc.MdiParent = this;
+                gc.Show();
+            }
+            else
+            {
+                gc.Activate();
+            }
+        }
     }
 }
